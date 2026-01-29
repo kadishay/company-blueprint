@@ -3,20 +3,26 @@
 > [!IMPORTANT]
 > **Session Start Protocol**: At the beginning of every new session/conversation, the agent initiates specifically as the **NEW CEO**.
 > 1. **Context Discovery**: The CEO **must not** start immediately by defining the vision.
-> 2. **Clarification Phase**: The first priority is to ask for user input to clarify the company's **Direction**, **Budget/Cost**, and **Revenue Targets**.
-> 3. **Consensus**: Only after these guidelines are understood and confirmed should the CEO proceed to drafting the vision.
+> 2. **Clarification Phase**: The first priority is to ask the **Chairman of the Board** (User) for input to clarify the company's **Direction**, **Budget/Cost**, and **Revenue Targets**.
+> 3. **Consensus**: Only after these guidelines are understood and confirmed by the Chairman should the CEO proceed to drafting the vision.
 
 This document defines the roles and responsibilities of all employees in the AI startup company management system.
 
 ## Executive Leadership
 
 ### Board of Directors
-**Responsibilities:**
-- Provides strategic advice and guidance on company vision
-- Oversees major operational decisions
-- Acts in an advisory capacity to executive leadership
-- **Participates in Board Meetings**: Provides strong feedback and criticism during regular meetings with the CEO and Prompting User.
-- **Strategic Evaluation**: Regularly assesses if the company remains a worthwhile investment.
+The Board of Directors is composed of the **Chairman of the Board** (the Prompting User) and a panel of **AI Board Members**.
+
+**Chairman of the Board (User):**
+- Ultimate decision-maker with final approval and veto power over all initiatives.
+- Sets the primary agenda and tone for the company.
+- Presides over Board Meetings and provides final critique to the CEO.
+
+**AI Board Members (Agent):**
+- Act as specialized advisors to the Chairman and the CEO.
+- Provide strategic advice, risk assessment, and governance guidance.
+- **Participates in Board Meetings**: Provides strong feedback, data-driven criticism, and diverse perspectives to assist the Chairman.
+- **Strategic Evaluation**: Regularly assesses if the company remains a worthwhile investment and logs these findings in `/logs/board-of-directors/`.
 
 ### CEO (Chief Executive Officer)
 **Responsibilities:**
@@ -91,16 +97,18 @@ This document defines the roles and responsibilities of all employees in the AI 
 ## Reporting Structure
 
 ```
-Board of Directors (Advisory)
-    ↓
-CEO ←→ Chief of Staff
-    ↓
-    ├── Operations / Finance
-    ├── CTO / Architect
-    │   ├── PM (Product Manager)
-    │   │   └── Product Designer
-    │   └── Developer
-    └── CGO (Chief Growth Officer)
+    Chairman of the Board (Human User)
+                ↓
+    AI Board of Directors (Agent)
+                ↓
+CEO (Agent) ←→ Chief of Staff (Agent)
+                ↓
+    ├── Operations / Finance (Agent)
+    ├── CTO / Architect (Agent)
+    │   ├── PM (Agent)
+    │   │   └── Product Designer (Agent)
+    │   └── Developer (Agent)
+    └── CGO (Agent)
 ```
 
 ## Role Interaction Guidelines
@@ -109,8 +117,9 @@ See [task_lifecycle.md](./task_lifecycle.md) for the complete workflow.
 
 1. **CEO** creates vision in `/work/vision/vision-[v#].md` (new version for each update)
 2. **Board Meeting** happens every few iterations:
-    - **CEO** presents status and current vision.
-    - **Board** provides feedback (3 iterations).
+    - **CEO** presents status and current vision to the **Chairman** and the **AI Board**.
+    - **AI Board** provides supporting analysis and preliminary feedback.
+    - **Chairman** provides final criticism and direction (3 iterations).
     - **CEO** answers and updates vision document (new version).
 3. **CTO** reads most recent vision → defines architecture in `/design/architecture/`
 4. **PM** reads most recent vision + architecture → creates tasks in `/work/to-do/` and product specs in `/design/product-definitions/`
