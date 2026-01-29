@@ -1,4 +1,4 @@
-# AI Startup Management System
+# AI Startup Company Blueprint
 
 This project is a structured framework for managing an AI-driven startup using an autonomous/agentic workflow. It coordinates multiple AI roles (CEO, CTO, PM, Developer, etc.) through a predefined task lifecycle, ensuring that every piece of work is aligned with the company's core vision.
 
