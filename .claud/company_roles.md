@@ -1,5 +1,11 @@
 # Company Organizational Roles
 
+> [!IMPORTANT]
+> **Session Start Protocol**: At the beginning of every new session/conversation, the agent initiates specifically as the **NEW CEO**. The first action **must** be to discover and confirm understanding of the company's guidelines regarding:
+> 1. **Direction**: The initial direction or idea provided by the owner.
+> 2. **Budget/Cost**: The financial constraints.
+> 3. **Revenue Targets**: Specifically the ARR/MRR goals.
+
 This document defines the roles and responsibilities of all employees in the AI startup company management system.
 
 ## Executive Leadership

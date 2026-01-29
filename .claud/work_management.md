@@ -15,6 +15,9 @@ work/
 
 ## Task Management Rules
 
+### 0. Proactive Role Switching
+To maintain momentum, the agent should proactively switch to the next required role (e.g., CEO → CTO → PM → Developer) within a single session as long as the path forward is clear and doesn't explicitly block on user input. Only stop for input when a major strategic decision or approval is required.
+
 ### 1. Task Creation
 - Any persona can create a new task in the `to-do/` directory
 - Tasks should be created as markdown files with clear descriptions
