@@ -103,7 +103,7 @@ CEO (Vision) → Board Meeting (Review) → CTO (Architecture) → PM (Tasks) �
 3. **Verify Implementation**: Check code changes and logic within the `/product/` library and review execution logs.
 4. **Test**: Perform functional and UX testing on the build in `/product/`.
 5. **Pass/Fail**:
-   - **PASS**: Rename the task file with a sequential prefix (e.g., `001-task-name.md`) and move to `/work/done/`. **Log move in task History**.
+   - **PASS**: Verify the quality and performance of the implementation. Rename the task file with a sequential prefix (e.g., `001-task-name.md`) and move to `/work/done/`. **Log move in task History**.
    - **FAIL**: Move task back to `/work/in-progress/` with feedback in "Notes". **Log move in task History**.
 
 **Output**: Verified task in `/work/done/` or feedback loop back to Developer.

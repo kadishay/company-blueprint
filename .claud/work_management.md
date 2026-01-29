@@ -40,7 +40,7 @@ To maintain momentum, the agent should proactively switch to the next required r
 ### 2. Task Movement
 - **To Do → In Progress**: When an agent starts working on a task
 - **In Progress → QA**: When a Developer completes implementation
-- **QA → Done**: When QA verifies and approves the task
+- **QA → Done**: When QA verifies and approves the quality and performance of the task
 - **QA → In Progress**: If QA identifies issues and sends the task back for fixes
 - **In Progress → To Do**: If a task is blocked or needs to be re-prioritized
 
@@ -102,7 +102,7 @@ Each task file should include:
 1. **PM** translates vision into tasks → adds to `to-do/`
 2. **Developer** picks task from `to-do/` → moves to `in-progress/`
 3. **Developer** completes work → moves to `qa/`
-4. **QA** verifies implementation → moves to `done/` (or back to `in-progress/`)
+4. **QA** verifies implementation quality and performance → moves to `done/` (or back to `in-progress/`)
 5. **Board Meetings**: Held every few iterations. The Board provides strategic evaluation and determines if the company should continue or shut down.
 
 ## Integration with Logging

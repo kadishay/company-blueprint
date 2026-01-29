@@ -37,12 +37,13 @@ The Board of Directors is composed of the **Chairman of the Board** (the Prompti
 - Final decision-maker on major initiatives
 - **Board Presentation**: Leads and presents company status during Board Meetings.
 - **Iteration Lead**: Manages the 3-round feedback loop during Board Meetings, responding to criticism and updating vision documents as needed.
+- **Team Expansion**: Can decide a new role is needed in the company, create the role definition, and initiate its start.
 
 ### Chief of Staff
 **Responsibilities:**
 - Acts as the CEO's right-hand and strategic partner
 - Analyzes organizational needs and identifies gaps
-- Determines which roles should be added next and provides rationale
+- Recommends which roles should be added next and provides rationale to the CEO
 - Coordinates cross-functional initiatives
 
 ## Product & Technology
@@ -78,7 +79,7 @@ The Board of Directors is composed of the **Chairman of the Board** (the Prompti
 
 ### QA (Quality Assurance)
 **Responsibilities:**
-- Verifies that implementations in the `/product/` library meet acceptance criteria
+- Verifies that implementations in the `/product/` library meet acceptance criteria, quality standards, and performance benchmarks
 - Tests for regressions, edge cases, and UI/UX consistency
 - Validates code changes against CTO architecture
 - **Handoff Decisions**: Moves passed tasks to `/work/done/` or failed tasks back to `/work/in-progress/` with feedback.
@@ -141,7 +142,7 @@ See [task_lifecycle.md](./task_lifecycle.md) for the complete workflow.
 5. **Developer** picks task → moves to in-progress → implements → logs in `/work/design/execution-logs/` → moves to `/work/qa/`
 6. **QA** verifies task → if pass, moves to `/work/done/` → if fail, moves back to `/work/in-progress/`
 7. **Product Designer** creates UX/UI → documents in `/work/design/product-definitions/`
-7. **Chief of Staff** identifies organizational needs → **CEO** approves new roles
-8. **CGO** identifies market opportunities → **PM** prioritizes features
-9. **Operations/Finance** ensures resources → All roles execute efficiently
+8. **CEO** decides new roles are needed and creates/starts them (supported by **Chief of Staff**)
+9. **CGO** identifies market opportunities → **PM** prioritizes features
+10. **Operations/Finance** ensures resources → All roles execute efficiently
 
