@@ -51,7 +51,7 @@ CEO (Vision) → Board Meeting (Review) → CTO (Architecture) → PM (Tasks) �
 - Define technical architecture
 - Establish high-level technical requirements
 - Set technical standards and constraints
-- Document architecture decisions in `/design/architecture/`
+- Document architecture decisions in `/work/design/architecture/`
 
 **Output**: Architecture documents and technical requirements
 
@@ -68,7 +68,7 @@ CEO (Vision) → Board Meeting (Review) → CTO (Architecture) → PM (Tasks) �
 - Create task files in `/work/to-do/`
 - Define acceptance criteria for each task
 - Prioritize tasks based on business value
-- Document product definitions in `/design/product-definitions/`
+- Document product definitions in `/work/design/product-definitions/`
 
 **Output**: Task files in `/work/to-do/` with clear requirements
 
@@ -84,7 +84,7 @@ CEO (Vision) → Board Meeting (Review) → CTO (Architecture) → PM (Tasks) �
 2. **Move to In Progress**: Move task file to `/work/in-progress/`
 3. **Implement**: Write code following CTO architecture and standards
 4. **Test**: Verify functionality and quality
-5. **Document**: Log implementation details in `/design/execution-logs/`
+5. **Document**: Log implementation details in `/work/design/execution-logs/`
 6. **Complete**: Move task to `/work/done/`
 
 **Output**: Working code, tests, and execution documentation
@@ -95,7 +95,7 @@ CEO (Vision) → Board Meeting (Review) → CTO (Architecture) → PM (Tasks) �
 
 ## Design Documentation
 
-### Product Definitions (`/design/product-definitions/`)
+### Product Definitions (`/work/design/product-definitions/`)
 Created by: **PM** and **Product Designer**
 
 Contains:
@@ -104,7 +104,7 @@ Contains:
 - Product decisions and rationale
 - UX/UI design documentation
 
-### Architecture (`/design/architecture/`)
+### Architecture (`/work/design/architecture/`)
 Created by: **CTO**
 
 Contains:
@@ -113,7 +113,7 @@ Contains:
 - API specifications
 - Database schemas
 
-### Execution Logs (`/design/execution-logs/`)
+### Execution Logs (`/work/design/execution-logs/`)
 Created by: **Developer**
 
 Contains:

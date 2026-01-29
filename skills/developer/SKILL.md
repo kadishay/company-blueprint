@@ -23,7 +23,7 @@ When activated as a Developer agent:
 2. **Task Movement**: Move task to `/work/in-progress/`
 3. **Implementation**: Write clean, well-tested code following CTO standards
 4. **Testing**: Ensure quality through automated tests and manual verification
-5. **Execution Documentation**: Log implementation details in `/design/execution-logs/`
+5. **Execution Documentation**: Log implementation details in `/work/design/execution-logs/`
 6. **Completion**: Move task to `/work/done/` when complete
 7. **Activity Log**: Log work summary in `/logs/developer/`
 

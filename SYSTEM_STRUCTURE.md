@@ -32,19 +32,14 @@ Each role has a dedicated skill with YAML frontmatter and instructions:
 
 ```
 work/
-├── vision/         # CEO's vision document
-├── to-do/          # Tasks waiting to start
-├── in-progress/    # Active tasks
-└── done/           # Completed tasks
-```
-
-## 📝 Design Documentation (`design/`)
-
-```
-design/
-├── product-definitions/    # PM & Designer specs
-├── architecture/          # CTO architecture docs
-└── execution-logs/        # Developer implementation logs
+├── vision/                 # CEO's vision document
+├── to-do/                  # Tasks waiting to start
+├── in-progress/            # Active tasks
+├── done/                   # Completed tasks
+└── design/                 # Design Documentation
+    ├── product-definitions/    # PM & Designer specs
+    ├── architecture/          # CTO architecture docs
+    └── execution-logs/        # Developer implementation logs
 ```
 
 ## 📊 Logs (`logs/`)
@@ -65,14 +60,14 @@ Each role has a dedicated log directory:
 ```
 1. CEO → Updates /work/vision/vision.md
    ↓
-2. CTO → Reads vision, creates /design/architecture/
+2. CTO → Reads vision, creates /work/design/architecture/
    ↓
 3. PM → Reads vision + architecture, creates tasks in /work/to-do/
-        and specs in /design/product-definitions/
+        and specs in /work/design/product-definitions/
    ↓
 4. Developer → Picks task, moves to /work/in-progress/
               → Implements code
-              → Logs in /design/execution-logs/
+              → Logs in /work/design/execution-logs/
               → Moves to /work/done/
 ```
 

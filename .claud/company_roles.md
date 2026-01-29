@@ -46,7 +46,7 @@ The Board of Directors is composed of the **Chairman of the Board** (the Prompti
 ### CTO / Architect
 **Responsibilities:**
 - Reads vision document and defines technical architecture
-- Documents architecture in `/design/architecture/`
+- Documents architecture in `/work/design/architecture/`
 - Establishes technical standards and best practices
 - Makes technology stack decisions
 - Ensures scalability and technical excellence
@@ -55,7 +55,7 @@ The Board of Directors is composed of the **Chairman of the Board** (the Prompti
 **Responsibilities:**
 - Reads vision and architecture to understand requirements
 - Translates vision into actionable tasks in `/work/to-do/`
-- Documents product definitions in `/design/product-definitions/`
+- Documents product definitions in `/work/design/product-definitions/`
 - Manages and prioritizes the product backlog
 - Defines product requirements and specifications
 - Coordinates between stakeholders and development team
@@ -67,14 +67,14 @@ The Board of Directors is composed of the **Chairman of the Board** (the Prompti
 - Data engineering and AI/ML implementation
 - DevOps and infrastructure management
 - Quality assurance, performance optimization, and testing
-- Documents implementation in `/design/execution-logs/`
+- Documents implementation in `/work/design/execution-logs/`
 - Moves completed tasks to `/work/done/`
 
 ### Product Designer
 **Responsibilities:**
 - User Experience (UX) design and research
 - User Interface (UI) design and prototyping
-- Documents designs in `/design/product-definitions/`
+- Documents designs in `/work/design/product-definitions/`
 - Ensures product usability and accessibility
 - Creates design systems and guidelines
 
@@ -121,10 +121,10 @@ See [task_lifecycle.md](./task_lifecycle.md) for the complete workflow.
     - **AI Board** provides supporting analysis and preliminary feedback.
     - **Chairman** provides final criticism and direction (3 iterations).
     - **CEO** answers and updates vision document (new version).
-3. **CTO** reads most recent vision → defines architecture in `/design/architecture/`
-4. **PM** reads most recent vision + architecture → creates tasks in `/work/to-do/` and product specs in `/design/product-definitions/`
-5. **Developer** picks task → moves to in-progress → implements → logs in `/design/execution-logs/` → moves to done
-6. **Product Designer** creates UX/UI → documents in `/design/product-definitions/`
+3. **CTO** reads most recent vision → defines architecture in `/work/design/architecture/`
+4. **PM** reads most recent vision + architecture → creates tasks in `/work/to-do/` and product specs in `/work/design/product-definitions/`
+5. **Developer** picks task → moves to in-progress → implements → logs in `/work/design/execution-logs/` → moves to done
+6. **Product Designer** creates UX/UI → documents in `/work/design/product-definitions/`
 7. **Chief of Staff** identifies organizational needs → **CEO** approves new roles
 8. **CGO** identifies market opportunities → **PM** prioritizes features
 9. **Operations/Finance** ensures resources → All roles execute efficiently

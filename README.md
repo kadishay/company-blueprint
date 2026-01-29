@@ -7,16 +7,16 @@ This project is a structured framework for managing an AI-driven startup using a
 The system operates on a hierarchical multi-agent model where each role has specific responsibilities and documentation paths. The workflow follows this cycle:
 
 1.  **Vision**: The CEO defines the mission and goals in [`work/vision/vision.md`](file:///Users/yotamka/Code/Company/work/vision/vision.md).
-2.  **Architecture**: The CTO creates technical specs in `design/architecture/`.
+2.  **Architecture**: The CTO creates technical specs in `work/design/architecture/`.
 3.  **Planning**: The PM breaks goals into tasks in `work/to-do/`.
-4.  **Execution**: The Developer implements code, moves tasks to `work/in-progress/`, and logs progress in `design/execution-logs/`.
+4.  **Execution**: The Developer implements code, moves tasks to `work/in-progress/`, and logs progress in `work/design/execution-logs/`.
 
 ## 🛠 Project Structure
 
 -   `.claud/`: System rules and workflow definitions.
 -   `skills/`: Instructions and frontmatter for each AI role.
--   `work/`: The task board (Vision, To-Do, In-Progress, Done).
--   `design/`: Technical blueprints and execution logs.
+-   `work/`: The task board (Vision, To-Do, In-Progress, Done, and Design).
+-   `work/design/`: Technical blueprints and execution logs.
 -   `logs/`: Historical data for each department.
 
 ## 🏁 Getting Started for the User
@@ -24,7 +24,7 @@ The system operates on a hierarchical multi-agent model where each role has spec
 As the human collaborator, you are the **Chairman of the Board**. You are the ultimate decision-maker and the person to whom all AI agents (including the CEO and the AI Board of Directors) report. To kick off the system:
 
 1.  **Seed the Vision**: Provide a high-level idea or problem you want the company to solve.
-2.  **Chairman's Review**: Monitor changes in the `design/` and `work/` folders. The agents will present major milestones for your approval.
+2.  **Chairman's Review**: Monitor changes in the `work/design/` and `work/` folders. The agents will present major milestones for your approval.
 3.  **Board Meetings**: Participate in strategic review sessions. The AI Board will provide analysis and "second opinions" to help you evaluate the CEO's progress before you give final direction.
 
 ---
