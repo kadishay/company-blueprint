@@ -9,14 +9,18 @@ This document defines the roles and responsibilities of all employees in the AI 
 - Provides strategic advice and guidance on company vision
 - Oversees major operational decisions
 - Acts in an advisory capacity to executive leadership
+- **Participates in Board Meetings**: Provides strong feedback and criticism during regular meetings with the CEO and Prompting User.
+- **Strategic Evaluation**: Regularly assesses if the company remains a worthwhile investment.
 
 ### CEO (Chief Executive Officer)
 **Responsibilities:**
 - Creates and owns the initial idea, concepts, and vision
-- Maintains the vision document in `/work/vision/vision.md`
+- Maintains the vision document (creates new versions in `/work/vision/` instead of revising)
 - Defines success metrics and key performance indicators
 - Sets overall company direction and strategy
 - Final decision-maker on major initiatives
+- **Board Presentation**: Leads and presents company status during Board Meetings.
+- **Iteration Lead**: Manages the 3-round feedback loop during Board Meetings, responding to criticism and updating vision documents as needed.
 
 ### Chief of Staff
 **Responsibilities:**
@@ -97,12 +101,16 @@ CEO ←→ Chief of Staff
 
 See [task_lifecycle.md](./task_lifecycle.md) for the complete workflow.
 
-1. **CEO** creates vision in `/work/vision/vision.md` with mission, metrics, and definitions
-2. **CTO** reads vision → defines architecture in `/design/architecture/`
-3. **PM** reads vision + architecture → creates tasks in `/work/to-do/` and product specs in `/design/product-definitions/`
-4. **Developer** picks task → moves to in-progress → implements → logs in `/design/execution-logs/` → moves to done
-5. **Product Designer** creates UX/UI → documents in `/design/product-definitions/`
-6. **Chief of Staff** identifies organizational needs → **CEO** approves new roles
-7. **CGO** identifies market opportunities → **PM** prioritizes features
-8. **Operations/Finance** ensures resources → All roles execute efficiently
+1. **CEO** creates vision in `/work/vision/vision-[v#].md` (new version for each update)
+2. **Board Meeting** happens every few iterations:
+    - **CEO** presents status and current vision.
+    - **Board** provides feedback (3 iterations).
+    - **CEO** answers and updates vision document (new version).
+3. **CTO** reads most recent vision → defines architecture in `/design/architecture/`
+4. **PM** reads most recent vision + architecture → creates tasks in `/work/to-do/` and product specs in `/design/product-definitions/`
+5. **Developer** picks task → moves to in-progress → implements → logs in `/design/execution-logs/` → moves to done
+6. **Product Designer** creates UX/UI → documents in `/design/product-definitions/`
+7. **Chief of Staff** identifies organizational needs → **CEO** approves new roles
+8. **CGO** identifies market opportunities → **PM** prioritizes features
+9. **Operations/Finance** ensures resources → All roles execute efficiently
 

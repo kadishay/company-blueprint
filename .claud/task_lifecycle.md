@@ -5,30 +5,46 @@ This document defines the complete lifecycle of tasks from vision to completion 
 ## Lifecycle Overview
 
 ```
-CEO (Vision) → CTO (Architecture) → PM (Tasks) → Developer (Implementation) → Done
-                                                      ↓
-                                              Design Documentation
+CEO (Vision) → Board Meeting (Review) → CTO (Architecture) → PM (Tasks) → Developer (Implementation) → Done
+                                                       ↓
+                                               Design Documentation
 ```
 
 ## Detailed Workflow
 
 ### 1. CEO - Vision Definition
-**Location**: `/work/vision/vision.md`
+**Location**: `/work/vision/vision-[v#].md`
 
 **Responsibilities**:
 - Define company mission and strategic goals
 - Set success metrics and KPIs
 - Create high-level product concepts and definitions
-- Update vision document with new initiatives
+- **Versioning**: Instead of revising existing files, always present a new vision document (e.g., `vision-v2.md`). The most recent file is the source of truth.
 
-**Output**: Updated vision document with mission, metrics, and product definitions
+**Output**: New version of the vision document.
 
 **Logs**: `/logs/ceo/`
 
 ---
 
-### 2. CTO - Architecture & Requirements
-**Triggered by**: New or updated vision document
+### 2. Board Meeting - Strategic Review
+**Triggered by**: Every few development iterations or major strategic shifts.
+
+**Participants**: Board, CEO, and Prompting User.
+
+**Process**:
+1. **CEO Presentation**: CEO presents the current company status and vision.
+2. **Feedback Loop (3 Iterations)**: 
+   - Board provides feedback, criticism, or strategic evaluation.
+   - CEO responds to feedback and potentially creates an updated vision version.
+3. **Existential Check**: Board may determine if the company is no longer worthwhile.
+
+**Output**: Finalized vision version for the cycle and meeting records in `/logs/board-of-directors/`.
+
+---
+
+### 3. CTO - Architecture & Requirements
+**Triggered by**: Successful Board Meeting and newest vision version
 
 **Responsibilities**:
 - Read vision document
@@ -43,11 +59,11 @@ CEO (Vision) → CTO (Architecture) → PM (Tasks) → Developer (Implementation
 
 ---
 
-### 3. PM - Task Creation
-**Triggered by**: Vision document and architecture definitions
+### 4. PM - Task Creation
+**Triggered by**: Newest vision document and architecture definitions
 
 **Responsibilities**:
-- Read vision document and architecture requirements
+- Read the most recent vision document and architecture requirements
 - Break down vision into actionable tasks
 - Create task files in `/work/to-do/`
 - Define acceptance criteria for each task
@@ -60,7 +76,7 @@ CEO (Vision) → CTO (Architecture) → PM (Tasks) → Developer (Implementation
 
 ---
 
-### 4. Developer - Implementation
+### 5. Developer - Implementation
 **Triggered by**: Tasks available in `/work/to-do/`
 
 **Responsibilities**:
@@ -115,7 +131,7 @@ Contains:
 
 ## Status Tracking
 
-- **Vision**: Updated by CEO as strategy evolves
+- **Vision**: New versions created by CEO as strategy evolves (never revised)
 - **Architecture**: Updated by CTO when technical changes needed
 - **Tasks**: Flow through to-do → in-progress → done
 - **Design Docs**: Continuously updated as work progresses

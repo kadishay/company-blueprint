@@ -67,6 +67,7 @@ Each task file should include:
 2. **Developer** picks task from `to-do/` → moves to `in-progress/`
 3. **Developer** completes work → moves to `done/`
 4. Any role can review `done/` for verification
+5. **Board Meetings**: Held every few iterations. The Board provides strategic evaluation and determines if the company should continue or shut down.
 
 ## Integration with Logging
 
