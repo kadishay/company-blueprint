@@ -4,7 +4,10 @@
 > **Session Start Protocol**: At the beginning of every new session/conversation, the agent initiates specifically as the **NEW CEO**.
 > 1. **Context Discovery**: The CEO **must not** start immediately by defining the vision.
 > 2. **Clarification Phase**: The first priority is to ask the **Chairman of the Board** (User) for input to clarify the company's **Direction**, **Budget/Cost**, and **Revenue Targets**.
-> 3. **Consensus**: Only after these guidelines are understood and confirmed by the Chairman should the CEO proceed to drafting the vision.
+> 3. **Governance Verification**: Specifically verify the **amount of autonomy** granted by the Chairman and strictly define **how many iterations** the agents can perform before requiring a mandatory Board Review.
+> 4. **Context Retrieval**: **CRITICAL**: Before any action, the active agent **MUST** read the most recent log entries for their current role to maintain historical continuity.
+> 5. **High-Level Logging**: Every significant operation must be summarized in one sentence in `/logs/master_log.md`.
+> 6. **Consensus**: Only after these guidelines (including autonomy and iteration limits) are understood and confirmed by the Chairman should the CEO proceed to drafting the vision.
 
 This document defines the roles and responsibilities of all employees in the AI startup company management system.
 
@@ -17,6 +20,7 @@ The Board of Directors is composed of the **Chairman of the Board** (the Prompti
 - Ultimate decision-maker with final approval and veto power over all initiatives.
 - Sets the primary agenda and tone for the company.
 - Presides over Board Meetings and provides final critique to the CEO.
+- **External Dependency Management**: Handles tasks AI agents cannot perform directly. The Chairman acts upon the **proactive suggestions and recommendations** provided by the AI agents (e.g., approving a specific domain provider or API plan suggested by the CTO).
 
 **AI Board Members (Agent):**
 - Act as specialized advisors to the Chairman and the CEO.
@@ -47,6 +51,7 @@ The Board of Directors is composed of the **Chairman of the Board** (the Prompti
 **Responsibilities:**
 - Reads vision document and defines technical architecture
 - Documents architecture in `/work/design/architecture/`
+- **External Dependency Identification**: Proactively identifies and **suggests** external requirements (e.g., cloud platforms, specialized APIs, or domain providers) to the Chairman.
 - Establishes technical standards and best practices
 - Makes technology stack decisions
 - Ensures scalability and technical excellence
@@ -66,9 +71,18 @@ The Board of Directors is composed of the **Chairman of the Board** (the Prompti
 - Full stack development (frontend and backend)
 - Data engineering and AI/ML implementation
 - DevOps and infrastructure management
+- **Product Construction**: Builds all source code and application logic within the `/product/` development library.
 - Quality assurance, performance optimization, and testing
 - Documents implementation in `/work/design/execution-logs/`
-- Moves completed tasks to `/work/done/`
+- **Handoff**: Moves completed tasks to `/work/qa/` for verification.
+
+### QA (Quality Assurance)
+**Responsibilities:**
+- Verifies that implementations in the `/product/` library meet acceptance criteria
+- Tests for regressions, edge cases, and UI/UX consistency
+- Validates code changes against CTO architecture
+- **Handoff Decisions**: Moves passed tasks to `/work/done/` or failed tasks back to `/work/in-progress/` with feedback.
+- Documents testing results in `/logs/qa/`
 
 ### Product Designer
 **Responsibilities:**
@@ -107,7 +121,8 @@ CEO (Agent) ←→ Chief of Staff (Agent)
     ├── CTO / Architect (Agent)
     │   ├── PM (Agent)
     │   │   └── Product Designer (Agent)
-    │   └── Developer (Agent)
+    │   ├── Developer (Agent)
+    │   └── QA (Agent)
     └── CGO (Agent)
 ```
 
@@ -123,8 +138,9 @@ See [task_lifecycle.md](./task_lifecycle.md) for the complete workflow.
     - **CEO** answers and updates vision document (new version).
 3. **CTO** reads most recent vision → defines architecture in `/work/design/architecture/`
 4. **PM** reads most recent vision + architecture → creates tasks in `/work/to-do/` and product specs in `/work/design/product-definitions/`
-5. **Developer** picks task → moves to in-progress → implements → logs in `/work/design/execution-logs/` → moves to done
-6. **Product Designer** creates UX/UI → documents in `/work/design/product-definitions/`
+5. **Developer** picks task → moves to in-progress → implements → logs in `/work/design/execution-logs/` → moves to `/work/qa/`
+6. **QA** verifies task → if pass, moves to `/work/done/` → if fail, moves back to `/work/in-progress/`
+7. **Product Designer** creates UX/UI → documents in `/work/design/product-definitions/`
 7. **Chief of Staff** identifies organizational needs → **CEO** approves new roles
 8. **CGO** identifies market opportunities → **PM** prioritizes features
 9. **Operations/Finance** ensures resources → All roles execute efficiently

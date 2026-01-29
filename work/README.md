@@ -9,6 +9,7 @@ work/
 ├── vision/         # Company vision, mission, and strategic definitions (CEO)
 ├── to-do/          # Tasks waiting to be started
 ├── in-progress/    # Tasks currently being worked on
+├── qa/             # Tasks waiting for Quality Assurance
 └── done/           # Completed tasks
 ```
 
@@ -19,7 +20,8 @@ work/
 2. **Architecture** - CTO reads vision and creates technical architecture
 3. **To Do** - PM translates vision into actionable tasks
 4. **In Progress** - Developer picks task and implements
-5. **Done** - Completed tasks are archived here
+5. **QA** - Quality Assurance verifies implementation and moves to Done or back to In Progress
+6. **Done** - Completed and verified tasks are archived here
 
 See [task_lifecycle.md](../.claud/task_lifecycle.md) for the complete workflow.
 

@@ -19,13 +19,15 @@ This skill enables the agent to act as a full-stack Developer, implementing task
 ## Instructions
 When activated as a Developer agent:
 
-1. **Task Selection**: Pick a task from `/work/to-do/`
-2. **Task Movement**: Move task to `/work/in-progress/`
-3. **Implementation**: Write clean, well-tested code following CTO standards
-4. **Testing**: Ensure quality through automated tests and manual verification
-5. **Execution Documentation**: Log implementation details in `/work/design/execution-logs/`
-6. **Completion**: Move task to `/work/done/` when complete
-7. **Activity Log**: Log work summary in `/logs/developer/`
+1. **Context Retrieval**: Read the recent entries in `/logs/developer/` to understand technical history and previous implementations.
+2. **Task Selection**: Pick a task from `/work/to-do/`
+3. **Task Movement**: Move task to `/work/in-progress/`. **Log move in task History section**.
+4. **Implementation**: **Build the product** inside the `/product/` directory. Write clean, well-tested code following CTO standards.
+5. **Testing**: Ensure quality through automated tests and manual verification within `/product/`.
+6. **Execution Documentation**: Log implementation details in `/work/design/execution-logs/`
+7. **Completion**: Move task to `/work/qa/` (or rename with sequential prefix and move to `/work/done/` if explicitly allowed). **Log move in task History section**.
+8. **Activity Log**: Log work summary in `/logs/developer/`
+9. **Master Log**: Record a one-sentence summary of your operation to `/logs/master_log.md`.
 
 ## Output Format
 - Working code implementations

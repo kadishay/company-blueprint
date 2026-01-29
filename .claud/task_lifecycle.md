@@ -5,7 +5,7 @@ This document defines the complete lifecycle of tasks from vision to completion 
 ## Lifecycle Overview
 
 ```
-CEO (Vision) → Board Meeting (Review) → CTO (Architecture) → PM (Tasks) → Developer (Implementation) → Done
+CEO (Vision) → Board Meeting (Review) → CTO (Architecture) → PM (Tasks) → Developer (Implementation) → QA → Done
                                                        ↓
                                                Design Documentation
 ```
@@ -28,7 +28,7 @@ CEO (Vision) → Board Meeting (Review) → CTO (Architecture) → PM (Tasks) �
 ---
 
 ### 2. Board Meeting - Strategic Review
-**Triggered by**: Every few development iterations or major strategic shifts.
+**Triggered by**: Reaching the **iteration limit** set by the Chairman, every few development iterations, or major strategic shifts.
 
 **Participants**: Board, CEO, and Prompting User.
 
@@ -70,7 +70,7 @@ CEO (Vision) → Board Meeting (Review) → CTO (Architecture) → PM (Tasks) �
 - Prioritize tasks based on business value
 - Document product definitions in `/work/design/product-definitions/`
 
-**Output**: Task files in `/work/to-do/` with clear requirements
+**Output**: Task files in `/work/to-do/` with clear requirements and initial entry in `## History`.
 
 **Logs**: `/logs/pm/`
 
@@ -81,15 +81,34 @@ CEO (Vision) → Board Meeting (Review) → CTO (Architecture) → PM (Tasks) �
 
 **Responsibilities**:
 1. **Select Task**: Pick highest priority task from `/work/to-do/`
-2. **Move to In Progress**: Move task file to `/work/in-progress/`
-3. **Implement**: Write code following CTO architecture and standards
-4. **Test**: Verify functionality and quality
-5. **Document**: Log implementation details in `/work/design/execution-logs/`
-6. **Complete**: Move task to `/work/done/`
+2. **Move to In Progress**: Move task file to `/work/in-progress/`. **Log move in task History**.
+3. **Context Retrieval**: Read recent logs in `/logs/developer/`.
+4. **Implementation**: **Build the product** inside the `/product/` directory following CTO architecture and standards.
+5. **Testing**: Ensure quality through automated tests and manual verification within `/product/`.
+6. **Documentation**: Log implementation details in `/work/design/execution-logs/`.
+7. **Complete**: Move task for verification to `/work/qa/`. **Log move in task History**.
 
 **Output**: Working code, tests, and execution documentation
 
 **Logs**: `/logs/developer/`
+
+---
+
+### 6. QA - Quality Assurance
+**Triggered by**: New implementations available in `/work/qa/`
+
+**Responsibilities**:
+1. **Context Retrieval**: Read recent entries in `/logs/qa/`.
+2. **Analyze Requirements**: Review the original task and architecture.
+3. **Verify Implementation**: Check code changes and logic within the `/product/` library and review execution logs.
+4. **Test**: Perform functional and UX testing on the build in `/product/`.
+5. **Pass/Fail**:
+   - **PASS**: Rename the task file with a sequential prefix (e.g., `001-task-name.md`) and move to `/work/done/`. **Log move in task History**.
+   - **FAIL**: Move task back to `/work/in-progress/` with feedback in "Notes". **Log move in task History**.
+
+**Output**: Verified task in `/work/done/` or feedback loop back to Developer.
+
+**Logs**: `/logs/qa/`
 
 ---
 

@@ -22,6 +22,7 @@ Each role has a dedicated skill with YAML frontmatter and instructions:
 - **cto** - Architecture and standards
 - **pm** - Product management
 - **developer** - Full-stack implementation
+- **qa** - Quality assurance and testing
 - **product-designer** - UX/UI design
 
 ### Operations & Growth
@@ -35,6 +36,7 @@ work/
 ├── vision/                 # CEO's vision document
 ├── to-do/                  # Tasks waiting to start
 ├── in-progress/            # Active tasks
+├── qa/                     # Tasks in QA review
 ├── done/                   # Completed tasks
 └── design/                 # Design Documentation
     ├── product-definitions/    # PM & Designer specs
@@ -42,15 +44,25 @@ work/
     └── execution-logs/        # Developer implementation logs
 ```
 
+## 🏗️ Product Development Library (`product/`)
+
+The root directory for all source code, components, and application assets.
+- Built by: **Developer**
+- Verified by: **QA**
+
 ## 📊 Logs (`logs/`)
 
-Each role has a dedicated log directory:
+The master log records a one-sentence summary of every operation:
+- **[master_log.md](file:///Users/yotamka/Code/Company/logs/master_log.md)** - Centralized activity stream
+
+Each role also has a dedicated log directory:
 - `board-of-directors/`
 - `ceo/`
 - `chief-of-staff/`
 - `cto/`
 - `pm/`
 - `developer/`
+- `qa/`
 - `product-designer/`
 - `cgo/`
 - `operations-finance/`
@@ -66,9 +78,12 @@ Each role has a dedicated log directory:
         and specs in /work/design/product-definitions/
    ↓
 4. Developer → Picks task, moves to /work/in-progress/
-              → Implements code
+              → **Builds code in /product/**
               → Logs in /work/design/execution-logs/
-              → Moves to /work/done/
+              → Moves to /work/qa/
+   ↓
+5. QA → Verifies implementation in /product/
+      → Moves to /work/done/ (or back to in-progress)
 ```
 
 ## ✅ System Alignment Verification

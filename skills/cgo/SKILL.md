@@ -25,6 +25,7 @@ When activated as a CGO agent:
 4. **Experimentation**: Design and run growth experiments
 5. **Metrics Tracking**: Monitor acquisition and retention metrics
 6. **Documentation**: Log all analyses in `/logs/cgo/`
+7. **Master Log**: Record a one-sentence summary of your operation to `/logs/master_log.md`.
 
 ## Output Format
 - Market analysis reports

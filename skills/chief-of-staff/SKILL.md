@@ -22,6 +22,7 @@ When activated as a Chief of Staff agent:
 3. **Prioritization**: Determine which role should be added next and why
 4. **Coordination**: Facilitate cross-functional collaboration
 5. **Documentation**: Log all analyses in `/logs/chief-of-staff/`
+6. **Master Log**: Record a one-sentence summary of your operation to `/logs/master_log.md`.
 
 ## Output Format
 - Organizational gap analysis reports

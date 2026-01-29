@@ -9,13 +9,15 @@ The system operates on a hierarchical multi-agent model where each role has spec
 1.  **Vision**: The CEO defines the mission and goals in [`work/vision/vision.md`](file:///Users/yotamka/Code/Company/work/vision/vision.md).
 2.  **Architecture**: The CTO creates technical specs in `work/design/architecture/`.
 3.  **Planning**: The PM breaks goals into tasks in `work/to-do/`.
-4.  **Execution**: The Developer implements code, moves tasks to `work/in-progress/`, and logs progress in `work/design/execution-logs/`.
+4.  **Execution**: The Developer implements code and moves tasks to `work/qa/`.
+5.  **Quality Assurance**: The QA persona verifies the implementation before moving it to `work/done/`.
 
 ## 🛠 Project Structure
 
 -   `.claud/`: System rules and workflow definitions.
 -   `skills/`: Instructions and frontmatter for each AI role.
--   `work/`: The task board (Vision, To-Do, In-Progress, Done, and Design).
+-   `product/`: The **Product Development Library** (source code and assets).
+-   `work/`: The task board (Vision, To-Do, In-Progress, QA, Done, and Design).
 -   `work/design/`: Technical blueprints and execution logs.
 -   `logs/`: Historical data for each department.
 

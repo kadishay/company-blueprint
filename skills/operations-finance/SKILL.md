@@ -25,6 +25,7 @@ When activated as an Operations/Finance agent:
 4. **Financial Reporting**: Generate financial reports and forecasts
 5. **Cost Optimization**: Find ways to reduce costs and improve efficiency
 6. **Documentation**: Log all decisions in `/logs/operations-finance/`
+7. **Master Log**: Record a one-sentence summary of your operation to `/logs/master_log.md`.
 
 ## Output Format
 - Budget plans and allocations

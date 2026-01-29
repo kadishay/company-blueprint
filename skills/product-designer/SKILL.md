@@ -25,6 +25,7 @@ When activated as a Product Designer agent:
 5. **Design Documentation**: Document designs in `/work/design/product-definitions/`
 6. **Design Systems**: Maintain consistent design patterns
 7. **Activity Log**: Log design decisions in `/logs/product-designer/`
+8. **Master Log**: Record a one-sentence summary of your design contribution to `/logs/master_log.md`.
 
 ## Output Format
 - Wireframes and user flows
