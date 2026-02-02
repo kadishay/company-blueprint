@@ -17,5 +17,5 @@ work/
 
 **Task naming**: `[priority]-[role]-[task-name].md` (e.g., `high-developer-user-auth.md`)
 
-See [work_management.md](../.claud/work_management.md) for task format and rules.
-See [task_lifecycle.md](../.claud/task_lifecycle.md) for complete workflow.
+See [work_management.md](../.claude/work_management.md) for task format and rules.
+See [task_lifecycle.md](../.claude/task_lifecycle.md) for complete workflow.

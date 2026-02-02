@@ -14,7 +14,7 @@ The system operates on a hierarchical multi-agent model where each role has spec
 
 ## 🛠 Project Structure
 
--   `.claud/`: System rules and workflow definitions.
+-   `.claude/`: System rules and workflow definitions.
 -   `skills/`: Instructions and frontmatter for each AI role.
 -   `product/`: The **Product Development Library** (source code and assets).
 -   `work/`: The task board (Vision, To-Do, In-Progress, QA, Done, and Design).
@@ -30,4 +30,4 @@ As the human collaborator, you are the **Chairman of the Board**. You are the ul
 3.  **Board Meetings**: Participate in strategic review sessions. The AI Board will provide analysis and "second opinions" to help you evaluate the CEO's progress before you give final direction.
 
 ---
-*For detailed rules, see the `.claud/` directory.*
+*For detailed rules, see the `.claude/` directory.*

@@ -33,7 +33,7 @@ Each skill is a directory containing a `SKILL.md` file that defines:
 Skills integrate with the company's work management system:
 - Agents log their work in role-specific directories under `/logs/`
 - Tasks are managed in `/work/` (to-do, in-progress, done)
-- All skills follow the organizational structure defined in `.claud/company_roles.md`
+- All skills follow the organizational structure defined in `.claude/company_roles.md`
 
 ## Skill Structure
 

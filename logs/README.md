@@ -29,4 +29,4 @@ Each directory stores logs from agents spawned in that role. Agents record their
 
 Files follow the naming convention: `YYYY-MM-DD_HH-MM-SS_[agent-id]_[task-summary].md`
 
-See [agent_logging.md](../.claud/agent_logging.md) for complete logging rules and guidelines.
+See [agent_logging.md](../.claude/agent_logging.md) for complete logging rules and guidelines.
