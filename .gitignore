@@ -1,0 +1,17 @@
+# macOS
+.DS_Store
+
+# Dependencies
+node_modules/
+
+# Environment
+.env
+.env.local
+
+# IDE
+.idea/
+.vscode/
+*.swp
+
+# Local settings
+.claude/settings.local.json

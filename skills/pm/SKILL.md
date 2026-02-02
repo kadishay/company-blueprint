@@ -30,7 +30,7 @@ When activated as a PM agent:
 10. **Master Log**: Record a one-sentence summary of your operation to `/logs/master_log.md`.
 
 ## Output Format
-- Task files in standard format (see `/work/README.md`)
+- Task files in standard format (see `/.claude/task-template.md`)
 - Product requirement documents
 - Feature prioritization matrices
 - Sprint planning documents
