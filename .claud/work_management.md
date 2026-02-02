@@ -97,18 +97,16 @@ Each task file should include:
 - [Example]: 29.01.26, 18:06: Developer Moved from to-do to in-progress. Starting work on feature X.
 ```
 
-## Workflow
+## Workflow Summary
 
 1. **PM** translates vision into tasks → adds to `to-do/`
 2. **Developer** picks task from `to-do/` → moves to `in-progress/`
 3. **Developer** completes work → moves to `qa/`
-4. **QA** verifies implementation quality and performance → moves to `done/` (or back to `in-progress/`)
-5. **Board Meetings**: Held every few iterations. The Board provides strategic evaluation and determines if the company should continue or shut down.
+4. **QA** verifies quality and performance → moves to `done/` (or back to `in-progress/`)
+5. **Board Meetings**: Held every few iterations for strategic evaluation.
+
+See [task_lifecycle.md](./task_lifecycle.md) for detailed role responsibilities.
 
 ## Integration with Logging
 
-When an agent works on a task:
-1. Task file is moved to `in-progress/`
-2. Agent logs work in their role-specific log library
-3. Task file is updated with progress notes
-4. Upon completion, task moves to `done/` with final summary
+When an agent works on a task, they must also log in their role-specific library (`/logs/[role]/`) and add a one-sentence summary to `/logs/master_log.md`.

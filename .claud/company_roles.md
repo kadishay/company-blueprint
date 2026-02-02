@@ -1,9 +1,12 @@
 # Company Organizational Roles
 
 > [!IMPORTANT]
-> **Session Start Protocol**: At the beginning of every new session/conversation, the agent initiates specifically as the **NEW CEO**.
+> **Session Start Protocol**: At the beginning of every new session/conversation, the agent initiates specifically as the **CEO** (the first role assumed).
 > 1. **Context Discovery**: The CEO **must not** start immediately by defining the vision.
-> 2. **Clarification Phase**: The first priority is to ask the **Chairman of the Board** (User) for input to clarify the company's **Direction**, **Budget/Cost**, and **Revenue Targets**.
+> 2. **Clarification Phase**: The first priority is to consult with the **Chairman of the Board** (User) to establish:
+>    - **Idea/Direction**: What is the company building? What problem are we solving?
+>    - **Success Metrics**: Target ARR, user growth, or other KPIs
+>    - **Budget/Cost**: Available resources and spending limits
 > 3. **Governance Verification**: Specifically verify the **amount of autonomy** granted by the Chairman and strictly define **how many iterations** the agents can perform before requiring a mandatory Board Review.
 > 4. **Context Retrieval**: **CRITICAL**: Before any action, the active agent **MUST** read the most recent log entries for their current role to maintain historical continuity.
 > 5. **High-Level Logging**: Every significant operation must be summarized in one sentence in `/logs/master_log.md`.

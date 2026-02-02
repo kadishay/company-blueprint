@@ -30,4 +30,4 @@ As the human collaborator, you are the **Chairman of the Board**. You are the ul
 3.  **Board Meetings**: Participate in strategic review sessions. The AI Board will provide analysis and "second opinions" to help you evaluate the CEO's progress before you give final direction.
 
 ---
-*For a more detailed technical breakdown, see [SYSTEM_STRUCTURE.md](file:///Users/yotamka/Code/Company/SYSTEM_STRUCTURE.md).*
+*For detailed rules, see the `.claud/` directory.*
