@@ -1,0 +1,857 @@
+.persona {
+  position: absolute;
+  width: var(--tile-size);
+  height: var(--tile-size);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  cursor: pointer;
+  transition: left 0.3s ease, top 0.3s ease;
+  z-index: 10;
+}
+
+.persona:hover {
+  z-index: 20;
+}
+
+.persona-label {
+  position: absolute;
+  top: -24px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 7px;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.85);
+  padding: 3px 8px;
+  border: 2px solid var(--persona-color);
+  border-radius: 3px;
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.2s;
+  z-index: 100;
+}
+
+.persona:hover .persona-label,
+.persona.selected .persona-label {
+  opacity: 1;
+}
+
+/* Pixel Art Sprite Container */
+.pixel-sprite {
+  position: relative;
+  width: 16px;
+  height: 24px;
+  image-rendering: pixelated;
+  transform-origin: bottom center;
+  transform: scale(1.8);
+  margin-bottom: 6px;
+}
+
+/* ============ HAIR STYLES ============ */
+
+.sprite-hair {
+  position: absolute;
+  top: 0;
+  left: 3px;
+  width: 10px;
+  height: 6px;
+  background: var(--hair-color);
+  border-radius: 3px 3px 0 0;
+}
+
+.sprite-hair::before {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: -1px;
+  width: 12px;
+  height: 4px;
+  background: var(--hair-color);
+}
+
+/* Short hair (default) */
+.hair-short {
+  top: 0;
+  left: 3px;
+  width: 10px;
+  height: 6px;
+  border-radius: 3px 3px 0 0;
+}
+
+/* Long hair */
+.hair-long {
+  top: 0;
+  left: 2px;
+  width: 12px;
+  height: 8px;
+  border-radius: 4px 4px 0 0;
+}
+
+.hair-long::before {
+  top: 4px;
+  left: -2px;
+  width: 16px;
+  height: 10px;
+  border-radius: 0 0 3px 3px;
+}
+
+/* Spiky hair */
+.hair-spiky {
+  top: -2px;
+  left: 2px;
+  width: 12px;
+  height: 8px;
+  background: var(--hair-color);
+  clip-path: polygon(0% 100%, 15% 30%, 30% 80%, 50% 0%, 70% 80%, 85% 30%, 100% 100%);
+  border-radius: 0;
+}
+
+.hair-spiky::before {
+  top: 6px;
+  left: -1px;
+  width: 14px;
+  height: 4px;
+  border-radius: 0;
+}
+
+/* Bald */
+.hair-bald {
+  background: var(--skin-color);
+  border-radius: 5px 5px 0 0;
+  height: 4px;
+}
+
+.hair-bald::before {
+  display: none;
+}
+
+/* Ponytail */
+.hair-ponytail {
+  top: 0;
+  left: 3px;
+  width: 10px;
+  height: 6px;
+  border-radius: 3px 3px 0 0;
+}
+
+.hair-ponytail::after {
+  content: '';
+  position: absolute;
+  top: 4px;
+  right: -4px;
+  width: 4px;
+  height: 10px;
+  background: var(--hair-color);
+  border-radius: 2px;
+}
+
+/* Curly hair */
+.hair-curly {
+  top: -1px;
+  left: 2px;
+  width: 12px;
+  height: 7px;
+  border-radius: 6px 6px 0 0;
+  background: var(--hair-color);
+}
+
+.hair-curly::before {
+  top: 3px;
+  left: -2px;
+  width: 16px;
+  height: 6px;
+  background: var(--hair-color);
+  border-radius: 4px;
+}
+
+.hair-curly::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 1px;
+  width: 3px;
+  height: 3px;
+  background: var(--hair-color);
+  border-radius: 50%;
+  box-shadow:
+    4px -1px 0 var(--hair-color),
+    8px 0 0 var(--hair-color);
+}
+
+/* Bun */
+.hair-bun {
+  top: 0;
+  left: 3px;
+  width: 10px;
+  height: 5px;
+  border-radius: 3px 3px 0 0;
+}
+
+.hair-bun::after {
+  content: '';
+  position: absolute;
+  top: -4px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 6px;
+  height: 6px;
+  background: var(--hair-color);
+  border-radius: 50%;
+}
+
+/* Mohawk */
+.hair-mohawk {
+  top: -3px;
+  left: 5px;
+  width: 6px;
+  height: 9px;
+  background: var(--hair-color);
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  border-radius: 0;
+}
+
+.hair-mohawk::before {
+  top: 7px;
+  left: -2px;
+  width: 10px;
+  height: 3px;
+  border-radius: 2px;
+}
+
+/* ============ FACE & EXPRESSIONS ============ */
+
+.sprite-face {
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  width: 8px;
+  height: 6px;
+  background: var(--skin-color);
+  border-radius: 1px;
+}
+
+/* Default eyes */
+.sprite-face::before {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 1px;
+  width: 2px;
+  height: 2px;
+  background: #1a1a1a;
+  box-shadow: 4px 0 0 #1a1a1a;
+  border-radius: 50%;
+}
+
+/* Mouth - neutral */
+.sprite-face::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 1px;
+  background: #a0522d;
+}
+
+/* Happy expression */
+.expression-happy::before {
+  border-radius: 50%;
+  height: 1px;
+  top: 2px;
+}
+
+.expression-happy::after {
+  width: 3px;
+  height: 1px;
+  border-radius: 0 0 3px 3px;
+  background: #a0522d;
+}
+
+/* Focused expression */
+.expression-focused::before {
+  height: 1px;
+  top: 2px;
+}
+
+.expression-focused::after {
+  width: 1px;
+}
+
+/* Tired expression */
+.expression-tired::before {
+  height: 1px;
+  top: 3px;
+  background: #666;
+  box-shadow: 4px 0 0 #666;
+}
+
+.expression-tired::after {
+  width: 3px;
+  border-radius: 3px 3px 0 0;
+}
+
+/* ============ FACIAL HAIR ============ */
+
+.facial-hair {
+  position: absolute;
+  z-index: 3;
+}
+
+.facial-beard {
+  top: 8px;
+  left: 4px;
+  width: 8px;
+  height: 4px;
+  background: var(--hair-color);
+  border-radius: 0 0 3px 3px;
+  opacity: 0.9;
+}
+
+.facial-goatee {
+  top: 8px;
+  left: 5px;
+  width: 6px;
+  height: 3px;
+  background: var(--hair-color);
+  border-radius: 0 0 2px 2px;
+  opacity: 0.9;
+}
+
+.facial-mustache {
+  top: 7px;
+  left: 4px;
+  width: 8px;
+  height: 2px;
+  background: var(--hair-color);
+  border-radius: 2px;
+  opacity: 0.9;
+}
+
+/* ============ BODY & CLOTHING ============ */
+
+.sprite-body {
+  position: absolute;
+  top: 10px;
+  left: 3px;
+  width: 10px;
+  height: 8px;
+  background: var(--shirt-color);
+  border-radius: 1px;
+}
+
+/* Casual - default */
+.body-casual {
+  background: var(--shirt-color);
+}
+
+/* Formal - collared */
+.body-formal {
+  background: var(--shirt-color);
+}
+
+.body-formal::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 3px;
+  width: 4px;
+  height: 3px;
+  background: #f5f5f5;
+  clip-path: polygon(0 0, 50% 100%, 100% 0);
+}
+
+/* Hoodie */
+.body-hoodie {
+  background: var(--shirt-color);
+  border-radius: 2px 2px 1px 1px;
+}
+
+/* Clothing details */
+.clothing-detail {
+  position: absolute;
+  z-index: 2;
+}
+
+.clothing-detail.tie {
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 6px;
+  background: #c0392b;
+}
+
+.clothing-detail.tie::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: -1px;
+  width: 4px;
+  height: 2px;
+  background: #c0392b;
+  clip-path: polygon(50% 100%, 0 0, 100% 0);
+}
+
+.clothing-detail.hood {
+  top: -2px;
+  left: -1px;
+  width: 12px;
+  height: 4px;
+  background: var(--shirt-color);
+  border-radius: 3px 3px 0 0;
+  filter: brightness(0.9);
+}
+
+/* ============ ARMS ============ */
+
+.sprite-arms {
+  position: absolute;
+  top: 11px;
+  left: 0;
+  width: 16px;
+  height: 7px;
+}
+
+.sprite-arms::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 3px;
+  height: 6px;
+  background: var(--shirt-color);
+  border-radius: 1px;
+}
+
+.sprite-arms::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 3px;
+  height: 6px;
+  background: var(--shirt-color);
+  border-radius: 1px;
+}
+
+/* Hands */
+.sprite-arms .hand-left,
+.sprite-arms .hand-right {
+  position: absolute;
+  bottom: 0;
+  width: 3px;
+  height: 2px;
+  background: var(--skin-color);
+  border-radius: 1px;
+}
+
+/* Holding items - adjust arm position */
+.sprite-arms.holding::after {
+  transform: rotate(-15deg);
+}
+
+/* ============ HELD ITEMS ============ */
+
+.held-item {
+  position: absolute;
+  z-index: 4;
+}
+
+.coffee-cup {
+  top: 3px;
+  right: -2px;
+  width: 4px;
+  height: 5px;
+  background: #f5f5f5;
+  border-radius: 0 0 1px 1px;
+}
+
+.coffee-cup::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: -2px;
+  width: 2px;
+  height: 3px;
+  border: 1px solid #f5f5f5;
+  border-left: none;
+  border-radius: 0 2px 2px 0;
+}
+
+.coffee-cup::after {
+  content: '';
+  position: absolute;
+  top: 1px;
+  left: 1px;
+  width: 2px;
+  height: 2px;
+  background: #6f4e37;
+  border-radius: 50%;
+}
+
+.laptop-item {
+  top: 2px;
+  right: -4px;
+  width: 6px;
+  height: 4px;
+  background: #3a3a3a;
+  border-radius: 1px;
+}
+
+.laptop-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 1px;
+  width: 4px;
+  height: 2px;
+  background: #4fc3f7;
+}
+
+.tablet-item {
+  top: 2px;
+  right: -3px;
+  width: 5px;
+  height: 6px;
+  background: #2a2a2a;
+  border-radius: 1px;
+}
+
+.tablet-item::before {
+  content: '';
+  position: absolute;
+  top: 1px;
+  left: 1px;
+  width: 3px;
+  height: 4px;
+  background: #81d4fa;
+}
+
+.phone-item {
+  top: 3px;
+  right: -1px;
+  width: 3px;
+  height: 4px;
+  background: #1a1a1a;
+  border-radius: 1px;
+}
+
+.phone-item::before {
+  content: '';
+  position: absolute;
+  top: 1px;
+  left: 1px;
+  width: 1px;
+  height: 2px;
+  background: #4fc3f7;
+}
+
+/* ============ LEGS & SHOES ============ */
+
+.sprite-legs {
+  position: absolute;
+  top: 18px;
+  left: 4px;
+  width: 8px;
+  height: 6px;
+  display: flex;
+  gap: 2px;
+}
+
+.leg {
+  width: 3px;
+  height: 6px;
+  background: var(--pants-color);
+  border-radius: 0 0 1px 1px;
+  position: relative;
+}
+
+.shoe {
+  position: absolute;
+  bottom: 0;
+  left: -1px;
+  width: 4px;
+  height: 2px;
+  background: #2a2a2a;
+  border-radius: 1px;
+}
+
+/* ============ SHADOW ============ */
+
+.sprite-shadow {
+  position: absolute;
+  bottom: -2px;
+  left: 2px;
+  width: 12px;
+  height: 4px;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 50%;
+}
+
+/* ============ ACCESSORIES ============ */
+
+.accessory {
+  position: absolute;
+  z-index: 5;
+}
+
+/* Glasses */
+.accessory.glasses {
+  top: 5px;
+  left: 2px;
+  width: 12px;
+  height: 3px;
+  background: transparent;
+  border: 1px solid #333;
+  border-radius: 1px;
+}
+
+.accessory.glasses::before,
+.accessory.glasses::after {
+  content: '';
+  position: absolute;
+  top: -1px;
+  width: 4px;
+  height: 3px;
+  border: 1px solid #333;
+  border-radius: 1px;
+  background: rgba(135, 206, 235, 0.3);
+}
+
+.accessory.glasses::before { left: 0; }
+.accessory.glasses::after { right: 0; }
+
+/* Headphones */
+.accessory.headphones {
+  top: 0px;
+  left: 0px;
+  width: 16px;
+  height: 8px;
+  border: 2px solid #333;
+  border-bottom: none;
+  border-radius: 8px 8px 0 0;
+  background: transparent;
+}
+
+.accessory.headphones::before,
+.accessory.headphones::after {
+  content: '';
+  position: absolute;
+  top: 4px;
+  width: 4px;
+  height: 6px;
+  background: #e74c3c;
+  border-radius: 2px;
+}
+
+.accessory.headphones::before { left: -3px; }
+.accessory.headphones::after { right: -3px; }
+
+/* Bowtie */
+.accessory.bowtie {
+  top: 10px;
+  left: 5px;
+  width: 6px;
+  height: 4px;
+  background: #e74c3c;
+  clip-path: polygon(0% 50%, 25% 0%, 25% 100%, 75% 100%, 75% 0%, 100% 50%, 75% 100%, 75% 0%, 25% 0%, 25% 100%);
+}
+
+.accessory.bowtie::before {
+  content: '';
+  position: absolute;
+  top: 1px;
+  left: 2px;
+  width: 2px;
+  height: 2px;
+  background: #c0392b;
+  border-radius: 50%;
+}
+
+/* Hat */
+.accessory.hat {
+  top: -4px;
+  left: 1px;
+  width: 14px;
+  height: 6px;
+  background: #2c3e50;
+  border-radius: 2px 2px 0 0;
+}
+
+.accessory.hat::before {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: -2px;
+  width: 18px;
+  height: 3px;
+  background: #2c3e50;
+  border-radius: 1px;
+}
+
+.accessory.hat::after {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 10px;
+  height: 2px;
+  background: #e74c3c;
+}
+
+/* Earrings */
+.accessory.earrings::before,
+.accessory.earrings::after {
+  content: '';
+  position: absolute;
+  top: 6px;
+  width: 2px;
+  height: 2px;
+  background: #ffd700;
+  border-radius: 50%;
+  box-shadow: 0 0 2px #ffd700;
+}
+
+.accessory.earrings::before { left: 1px; }
+.accessory.earrings::after { right: 1px; }
+
+/* ============ ANIMATIONS ============ */
+
+/* Walking Animation */
+.persona.moving .leg.left {
+  animation: walkLeft 0.2s ease-in-out infinite;
+}
+
+.persona.moving .leg.right {
+  animation: walkRight 0.2s ease-in-out infinite;
+}
+
+@keyframes walkLeft {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-2px) translateX(-1px); }
+}
+
+@keyframes walkRight {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-2px) translateX(1px); }
+}
+
+/* Bounce effect when moving */
+.persona.moving .pixel-sprite {
+  animation: spriteWalk 0.2s ease-in-out infinite;
+}
+
+@keyframes spriteWalk {
+  0%, 100% { transform: scale(1.8) translateY(0); }
+  50% { transform: scale(1.8) translateY(-2px); }
+}
+
+/* Arm swing */
+.persona.moving .sprite-arms::before {
+  animation: armSwingLeft 0.2s ease-in-out infinite;
+}
+
+.persona.moving .sprite-arms::after {
+  animation: armSwingRight 0.2s ease-in-out infinite;
+}
+
+@keyframes armSwingLeft {
+  0%, 100% { transform: rotate(0deg); }
+  50% { transform: rotate(15deg); }
+}
+
+@keyframes armSwingRight {
+  0%, 100% { transform: rotate(0deg); }
+  50% { transform: rotate(-15deg); }
+}
+
+/* Idle animation - subtle breathing */
+.persona:not(.moving):not(.busy) .pixel-sprite {
+  animation: idle 3s ease-in-out infinite;
+}
+
+@keyframes idle {
+  0%, 100% { transform: scale(1.8); }
+  50% { transform: scale(1.8) translateY(-1px); }
+}
+
+/* Idle - occasional blink */
+.persona:not(.moving):not(.busy) .sprite-face::before {
+  animation: blink 4s ease-in-out infinite;
+}
+
+@keyframes blink {
+  0%, 45%, 55%, 100% { height: 2px; }
+  50% { height: 1px; }
+}
+
+/* Selected state */
+.persona.selected .pixel-sprite {
+  filter: drop-shadow(0 0 4px var(--persona-color)) drop-shadow(0 0 8px var(--persona-color));
+}
+
+.persona.selected .sprite-shadow {
+  background: var(--persona-color);
+  opacity: 0.5;
+  animation: pulse 1s ease-in-out infinite;
+}
+
+/* Busy/Thinking state */
+.persona.busy .pixel-sprite {
+  animation: think 0.5s ease-in-out infinite;
+}
+
+@keyframes think {
+  0%, 100% { transform: scale(1.8); }
+  50% { transform: scale(1.9); }
+}
+
+.thinking-bubble {
+  position: absolute;
+  top: -12px;
+  right: -4px;
+  font-size: 20px;
+  animation: float 1s ease-in-out infinite;
+  filter: drop-shadow(2px 2px 2px rgba(0,0,0,0.5));
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-3px); }
+}
+
+.selection-indicator {
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-bottom: 10px solid var(--color-accent);
+  animation: indicatorBlink 0.8s infinite;
+}
+
+@keyframes indicatorBlink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); opacity: 0.5; }
+  50% { transform: scale(1.2); opacity: 0.8; }
+}
+
+/* ============ HOVER EFFECTS ============ */
+
+.persona:hover .pixel-sprite {
+  filter: brightness(1.1);
+}
+
+.persona:hover .sprite-shadow {
+  transform: scale(1.1);
+}

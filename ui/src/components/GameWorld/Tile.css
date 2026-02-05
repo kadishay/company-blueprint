@@ -1,0 +1,1140 @@
+.tile {
+  width: var(--tile-size);
+  height: var(--tile-size);
+  box-sizing: border-box;
+  position: relative;
+  image-rendering: pixelated;
+}
+
+/* ============ FLOORS ============ */
+.tile-floor {
+  background: linear-gradient(135deg, #c9a86c 25%, #d4b678 25%, #d4b678 50%, #c9a86c 50%, #c9a86c 75%, #d4b678 75%);
+  background-size: 12px 12px;
+  border: 1px solid #a8884c;
+}
+
+.tile-floor-alt {
+  background: linear-gradient(45deg, #b89858 25%, #c4a468 25%, #c4a468 50%, #b89858 50%, #b89858 75%, #c4a468 75%);
+  background-size: 12px 12px;
+  border: 1px solid #a8884c;
+}
+
+.tile-rug {
+  background: #6b4c8c;
+  border: 1px solid #4a3366;
+  box-shadow: inset 0 0 8px rgba(0,0,0,0.3);
+}
+
+.tile-rug::before {
+  content: '';
+  position: absolute;
+  top: 4px; left: 4px; right: 4px; bottom: 4px;
+  border: 2px solid #8b6cac;
+  border-radius: 2px;
+}
+
+.tile-rug-alt {
+  background: #4c6b8c;
+  border: 1px solid #334a66;
+  box-shadow: inset 0 0 8px rgba(0,0,0,0.3);
+}
+
+/* ============ WALLS ============ */
+.tile-wall {
+  background: linear-gradient(to bottom, #8b4513 0%, #8b4513 48%, #654321 48%, #654321 52%, #8b4513 52%, #8b4513 100%);
+  background-size: 24px 12px;
+  border: 1px solid #5c3317;
+  box-shadow: inset 0 0 12px rgba(0,0,0,0.5);
+}
+
+.tile-wall-art {
+  background: linear-gradient(to bottom, #8b4513 0%, #8b4513 48%, #654321 48%, #654321 52%, #8b4513 52%, #8b4513 100%);
+  background-size: 24px 12px;
+  border: 1px solid #5c3317;
+}
+
+.wall-art-furniture {
+  position: absolute;
+  top: 8px; left: 8px;
+  width: 32px; height: 28px;
+  background: linear-gradient(135deg, #e74c3c, #f39c12, #2ecc71, #3498db);
+  border: 4px solid #5c3a1d;
+  border-radius: 2px;
+}
+
+/* ============ WINDOWS & DOORS ============ */
+.tile-window, .tile-window-large {
+  background: linear-gradient(to bottom, #8b4513 0%, #8b4513 48%, #654321 48%, #654321 52%, #8b4513 52%, #8b4513 100%);
+  background-size: 24px 12px;
+  border: 1px solid #5c3317;
+}
+
+.window-furniture {
+  position: absolute;
+  top: 4px; left: 8px;
+  width: 32px; height: 38px;
+  background: linear-gradient(180deg, #87ceeb 0%, #b0e0e6 50%, #87ceeb 100%);
+  border: 4px solid #5c3a1d;
+  border-radius: 2px;
+  box-shadow: inset 0 0 10px rgba(255,255,255,0.5);
+}
+
+.window-furniture::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 50%;
+  transform: translateX(-50%);
+  width: 3px; height: 100%;
+  background: #5c3a1d;
+}
+
+.window-furniture::after {
+  content: '';
+  position: absolute;
+  top: 50%; left: 0;
+  transform: translateY(-50%);
+  width: 100%; height: 3px;
+  background: #5c3a1d;
+}
+
+.tile-door {
+  background: linear-gradient(to bottom, #8b4513 0%, #8b4513 48%, #654321 48%, #654321 52%, #8b4513 52%, #8b4513 100%);
+  background-size: 24px 12px;
+  border: 1px solid #5c3317;
+}
+
+.door-furniture {
+  position: absolute;
+  top: 2px; left: 8px;
+  width: 32px; height: 44px;
+  background: linear-gradient(90deg, #6b4423 0%, #8b5a2b 50%, #6b4423 100%);
+  border: 3px solid #3a2410;
+  border-radius: 2px 2px 0 0;
+}
+
+.door-furniture::before {
+  content: '';
+  position: absolute;
+  top: 50%; right: 6px;
+  width: 6px; height: 6px;
+  background: #ffd700;
+  border-radius: 50%;
+  box-shadow: 0 0 4px #ffd700;
+}
+
+/* ============ DESKS ============ */
+.tile-desk, .tile-desk-l, .tile-desk-r, .tile-workstation {
+  background: #c9a86c;
+  border: 1px solid #a8884c;
+}
+
+.desk-furniture {
+  position: absolute;
+  bottom: 4px; left: 4px;
+  width: 40px; height: 28px;
+  background: linear-gradient(180deg, #9b6a3c 0%, #8b5a2b 100%);
+  border: 3px solid #5c3a1d;
+  border-radius: 3px;
+  box-shadow: 0 3px 0 #5c3a1d;
+}
+
+/* ============ COMPUTERS & MONITORS ============ */
+.tile-computer, .tile-laptop, .tile-monitor-dual, .tile-desk-items {
+  background: #c9a86c;
+  border: 1px solid #a8884c;
+}
+
+.computer-furniture {
+  position: absolute;
+  bottom: 6px; left: 50%;
+  transform: translateX(-50%);
+}
+
+.monitor {
+  width: 30px; height: 22px;
+  background: #2a2a2a;
+  border: 3px solid #1a1a1a;
+  border-radius: 3px;
+  position: relative;
+}
+
+.monitor::after {
+  content: '';
+  position: absolute;
+  bottom: -6px; left: 50%;
+  transform: translateX(-50%);
+  width: 12px; height: 6px;
+  background: #1a1a1a;
+}
+
+.screen {
+  position: absolute;
+  top: 3px; left: 3px;
+  width: 18px; height: 12px;
+  background: #00ff88;
+  animation: screenGlow 2s ease-in-out infinite;
+}
+
+@keyframes screenGlow {
+  0%, 100% { opacity: 0.8; background: #00ff88; }
+  50% { opacity: 1; background: #00ffaa; }
+}
+
+.laptop-furniture {
+  position: absolute;
+  bottom: 8px; left: 50%;
+  transform: translateX(-50%);
+  width: 28px; height: 18px;
+  background: #3a3a3a;
+  border: 2px solid #2a2a2a;
+  border-radius: 2px;
+}
+
+.laptop-furniture::before {
+  content: '';
+  position: absolute;
+  top: 2px; left: 2px;
+  width: 20px; height: 10px;
+  background: #4fc3f7;
+  animation: screenGlow 2s ease-in-out infinite;
+}
+
+.laptop-furniture::after {
+  content: '';
+  position: absolute;
+  bottom: -4px; left: 0;
+  width: 28px; height: 4px;
+  background: #4a4a4a;
+  border-radius: 0 0 2px 2px;
+}
+
+.monitor-dual-furniture {
+  position: absolute;
+  bottom: 6px; left: 50%;
+  transform: translateX(-50%);
+  width: 40px; height: 20px;
+  display: flex;
+  gap: 2px;
+}
+
+.monitor-dual-furniture::before,
+.monitor-dual-furniture::after {
+  content: '';
+  width: 18px; height: 16px;
+  background: #2a2a2a;
+  border: 2px solid #1a1a1a;
+  border-radius: 2px;
+  box-shadow: inset 2px 2px 8px rgba(0,255,136,0.5);
+}
+
+.desk-items-furniture {
+  position: absolute;
+  bottom: 8px; left: 50%;
+  transform: translateX(-50%);
+}
+
+.desk-items-furniture::before {
+  content: '';
+  position: absolute;
+  bottom: 0; left: -10px;
+  width: 8px; height: 12px;
+  background: #e74c3c;
+  border-radius: 2px;
+}
+
+.desk-items-furniture::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 4px;
+  width: 14px; height: 6px;
+  background: #f5f5f5;
+  border: 1px solid #ccc;
+}
+
+/* ============ CHAIRS ============ */
+.tile-chair, .tile-chair-left, .tile-chair-right, .tile-chair-up, .tile-chair-down {
+  background: #c9a86c;
+  border: 1px solid #a8884c;
+}
+
+/* Default chair (facing down/toward viewer) */
+.chair-furniture {
+  position: absolute;
+  bottom: 4px; left: 50%;
+  transform: translateX(-50%);
+  width: 26px; height: 20px;
+  background: linear-gradient(180deg, #4a7ae1 0%, #4169E1 100%);
+  border: 3px solid #2a4a9a;
+  border-radius: 4px;
+}
+
+/* Backrest visible from front */
+.chair-furniture::before {
+  content: '';
+  position: absolute;
+  top: -16px; left: 50%;
+  transform: translateX(-50%);
+  width: 22px; height: 14px;
+  background: linear-gradient(180deg, #5a8af1 0%, #4169E1 100%);
+  border: 3px solid #2a4a9a;
+  border-radius: 6px 6px 0 0;
+}
+
+/* Wheels */
+.chair-furniture::after {
+  content: '';
+  position: absolute;
+  bottom: -5px; left: 4px;
+  width: 5px; height: 5px;
+  background: #1a1a1a;
+  border-radius: 50%;
+  box-shadow: 12px 0 0 #1a1a1a, 6px 2px 0 #1a1a1a;
+}
+
+/* Chair facing UP (backrest at bottom, we see the back) */
+.chair-up-furniture {
+  position: absolute;
+  bottom: 10px; left: 50%;
+  transform: translateX(-50%);
+  width: 26px; height: 28px;
+  background: linear-gradient(0deg, #3a5ac1 0%, #4169E1 40%, #5a8af1 100%);
+  border: 3px solid #2a4a9a;
+  border-radius: 6px 6px 4px 4px;
+}
+
+/* Chair back detail (armrests visible from behind) */
+.chair-up-furniture::before {
+  content: '';
+  position: absolute;
+  top: 4px; left: -4px;
+  width: 4px; height: 12px;
+  background: #4169E1;
+  border: 2px solid #2a4a9a;
+  border-radius: 3px 0 0 3px;
+  box-shadow: 28px 0 0 #4169E1;
+}
+
+/* Wheels */
+.chair-up-furniture::after {
+  content: '';
+  position: absolute;
+  bottom: -5px; left: 4px;
+  width: 5px; height: 5px;
+  background: #1a1a1a;
+  border-radius: 50%;
+  box-shadow: 12px 0 0 #1a1a1a, 6px 2px 0 #1a1a1a;
+}
+
+/* Chair facing DOWN (backrest at top, we see the seat) */
+.chair-down-furniture {
+  position: absolute;
+  bottom: 4px; left: 50%;
+  transform: translateX(-50%);
+  width: 26px; height: 20px;
+  background: linear-gradient(180deg, #4a7ae1 0%, #4169E1 100%);
+  border: 3px solid #2a4a9a;
+  border-radius: 4px;
+}
+
+/* Backrest at top */
+.chair-down-furniture::before {
+  content: '';
+  position: absolute;
+  top: -16px; left: 50%;
+  transform: translateX(-50%);
+  width: 22px; height: 14px;
+  background: linear-gradient(180deg, #5a8af1 0%, #4169E1 100%);
+  border: 3px solid #2a4a9a;
+  border-radius: 6px 6px 0 0;
+}
+
+/* Wheels */
+.chair-down-furniture::after {
+  content: '';
+  position: absolute;
+  bottom: -5px; left: 4px;
+  width: 5px; height: 5px;
+  background: #1a1a1a;
+  border-radius: 50%;
+  box-shadow: 12px 0 0 #1a1a1a, 6px 2px 0 #1a1a1a;
+}
+
+/* Chair facing LEFT (backrest on right side) */
+.chair-left-furniture {
+  position: absolute;
+  bottom: 6px; left: 50%;
+  transform: translateX(-50%);
+  width: 28px; height: 24px;
+  background: linear-gradient(90deg, #4a7ae1 0%, #4169E1 100%);
+  border: 3px solid #2a4a9a;
+  border-radius: 4px;
+}
+
+/* Backrest on right */
+.chair-left-furniture::before {
+  content: '';
+  position: absolute;
+  top: 50%; right: -12px;
+  transform: translateY(-50%);
+  width: 12px; height: 20px;
+  background: linear-gradient(90deg, #4169E1 0%, #5a8af1 100%);
+  border: 3px solid #2a4a9a;
+  border-radius: 0 6px 6px 0;
+}
+
+/* Wheels */
+.chair-left-furniture::after {
+  content: '';
+  position: absolute;
+  bottom: -5px; left: 4px;
+  width: 5px; height: 5px;
+  background: #1a1a1a;
+  border-radius: 50%;
+  box-shadow: 14px 0 0 #1a1a1a, 7px 2px 0 #1a1a1a;
+}
+
+/* Chair facing RIGHT (backrest on left side) */
+.chair-right-furniture {
+  position: absolute;
+  bottom: 6px; left: 50%;
+  transform: translateX(-50%);
+  width: 28px; height: 24px;
+  background: linear-gradient(270deg, #4a7ae1 0%, #4169E1 100%);
+  border: 3px solid #2a4a9a;
+  border-radius: 4px;
+}
+
+/* Backrest on left */
+.chair-right-furniture::before {
+  content: '';
+  position: absolute;
+  top: 50%; left: -12px;
+  transform: translateY(-50%);
+  width: 12px; height: 20px;
+  background: linear-gradient(270deg, #4169E1 0%, #5a8af1 100%);
+  border: 3px solid #2a4a9a;
+  border-radius: 6px 0 0 6px;
+}
+
+/* Wheels */
+.chair-right-furniture::after {
+  content: '';
+  position: absolute;
+  bottom: -5px; left: 4px;
+  width: 5px; height: 5px;
+  background: #1a1a1a;
+  border-radius: 50%;
+  box-shadow: 14px 0 0 #1a1a1a, 7px 2px 0 #1a1a1a;
+}
+
+/* ============ PLANTS ============ */
+.tile-plant, .tile-plant-big {
+  background: #c9a86c;
+  border: 1px solid #a8884c;
+}
+
+.plant-furniture {
+  position: absolute;
+  bottom: 4px; left: 50%;
+  transform: translateX(-50%);
+}
+
+.pot {
+  width: 18px; height: 14px;
+  background: #cd853f;
+  border: 3px solid #8b4513;
+  border-radius: 0 0 6px 6px;
+}
+
+.leaves {
+  position: absolute;
+  bottom: 12px; left: 50%;
+  transform: translateX(-50%);
+  width: 6px; height: 18px;
+  background: #228b22;
+  border-radius: 3px;
+}
+
+.leaves::before, .leaves::after {
+  content: '';
+  position: absolute;
+  width: 14px; height: 14px;
+  background: #32cd32;
+  border-radius: 50%;
+}
+
+.leaves::before { top: -4px; left: -10px; }
+.leaves::after { top: 2px; left: 4px; }
+
+.plant-big-furniture {
+  position: absolute;
+  bottom: 2px; left: 50%;
+  transform: translateX(-50%);
+}
+
+.big-pot {
+  width: 26px; height: 18px;
+  background: linear-gradient(180deg, #cd853f 0%, #a0522d 100%);
+  border: 3px solid #8b4513;
+  border-radius: 0 0 8px 8px;
+}
+
+.big-leaves {
+  position: absolute;
+  bottom: 16px; left: 50%;
+  transform: translateX(-50%);
+  width: 8px; height: 26px;
+  background: #1e7a1e;
+  border-radius: 4px;
+}
+
+.big-leaves::before, .big-leaves::after {
+  content: '';
+  position: absolute;
+  background: #2e9b2e;
+  border-radius: 50%;
+}
+
+.big-leaves::before { width: 20px; height: 20px; top: -8px; left: -14px; }
+.big-leaves::after { width: 18px; height: 18px; top: 0px; left: 6px; }
+
+/* ============ BREAK AREA ============ */
+.tile-coffee, .tile-water-cooler {
+  background: #c9a86c;
+  border: 1px solid #a8884c;
+}
+
+.coffee-furniture {
+  position: absolute;
+  bottom: 4px; left: 50%;
+  transform: translateX(-50%);
+}
+
+.coffee-machine {
+  width: 28px; height: 34px;
+  background: linear-gradient(to bottom, #2a2a2a 0%, #3a3a3a 50%, #2a2a2a 100%);
+  border: 3px solid #1a1a1a;
+  border-radius: 3px;
+}
+
+.coffee-machine::before {
+  content: '';
+  position: absolute;
+  top: 6px; left: 50%;
+  transform: translateX(-50%);
+  width: 12px; height: 8px;
+  background: #ff6347;
+  border-radius: 3px;
+  animation: coffeeBlink 1s ease-in-out infinite;
+}
+
+.coffee-machine::after {
+  content: '';
+  position: absolute;
+  bottom: 4px; left: 50%;
+  transform: translateX(-50%);
+  width: 16px; height: 12px;
+  background: #8b4513;
+  border-radius: 3px;
+}
+
+@keyframes coffeeBlink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+.water-cooler-furniture {
+  position: absolute;
+  bottom: 4px; left: 50%;
+  transform: translateX(-50%);
+  width: 22px; height: 38px;
+  background: linear-gradient(180deg, #e0e0e0 0%, #c0c0c0 100%);
+  border: 3px solid #a0a0a0;
+  border-radius: 3px;
+}
+
+.water-cooler-furniture::before {
+  content: '';
+  position: absolute;
+  top: -8px; left: 50%;
+  transform: translateX(-50%);
+  width: 16px; height: 14px;
+  background: linear-gradient(180deg, #87ceeb 0%, #4fc3f7 100%);
+  border: 2px solid #a0a0a0;
+  border-radius: 4px 4px 0 0;
+}
+
+/* ============ MEETING ROOM ============ */
+.tile-whiteboard, .tile-whiteboard-large, .tile-meeting-table {
+  background: #c9a86c;
+  border: 1px solid #a8884c;
+}
+
+.whiteboard-furniture {
+  position: absolute;
+  top: 4px; left: 50%;
+  transform: translateX(-50%);
+  width: 40px; height: 30px;
+  background: #f5f5f5;
+  border: 4px solid #a0a0a0;
+  border-radius: 3px;
+}
+
+.whiteboard-furniture::before {
+  content: '';
+  position: absolute;
+  top: 6px; left: 4px;
+  width: 24px; height: 3px;
+  background: #4169E1;
+  box-shadow: 0 6px 0 #32cd32, 0 12px 0 #ff6347;
+}
+
+.table-furniture {
+  position: absolute;
+  bottom: 6px; left: 4px;
+  width: 40px; height: 24px;
+  background: linear-gradient(180deg, #6b4428 0%, #5c3a1d 100%);
+  border: 3px solid #3a2410;
+  border-radius: 3px;
+  box-shadow: 0 3px 0 #3a2410;
+}
+
+/* ============ STORAGE ============ */
+.tile-bookshelf, .tile-cabinet, .tile-server {
+  background: #c9a86c;
+  border: 1px solid #a8884c;
+}
+
+.bookshelf-furniture {
+  position: absolute;
+  top: 2px; left: 50%;
+  transform: translateX(-50%);
+  width: 38px; height: 42px;
+  background: #5c3a1d;
+  border: 3px solid #3a2410;
+  border-radius: 2px;
+}
+
+.bookshelf-furniture::before {
+  content: '';
+  position: absolute;
+  top: 4px; left: 3px;
+  width: 8px; height: 10px;
+  background: #e74c3c;
+  box-shadow:
+    10px 0 0 #3498db, 20px 0 0 #2ecc71,
+    0 14px 0 #9b59b6, 10px 14px 0 #f39c12, 20px 14px 0 #1abc9c,
+    0 28px 0 #e67e22, 10px 28px 0 #34495e, 20px 28px 0 #e74c3c;
+}
+
+.cabinet-furniture {
+  position: absolute;
+  bottom: 4px; left: 50%;
+  transform: translateX(-50%);
+  width: 36px; height: 32px;
+  background: linear-gradient(180deg, #808080 0%, #606060 100%);
+  border: 3px solid #404040;
+  border-radius: 2px;
+}
+
+.cabinet-furniture::before {
+  content: '';
+  position: absolute;
+  top: 8px; left: 50%;
+  transform: translateX(-50%);
+  width: 24px; height: 3px;
+  background: #303030;
+  box-shadow: 0 10px 0 #303030;
+}
+
+.server-furniture {
+  position: absolute;
+  bottom: 2px; left: 50%;
+  transform: translateX(-50%);
+  width: 32px; height: 42px;
+  background: linear-gradient(180deg, #2a2a2a 0%, #1a1a1a 100%);
+  border: 3px solid #0a0a0a;
+  border-radius: 2px;
+}
+
+.server-furniture::before {
+  content: '';
+  position: absolute;
+  top: 4px; left: 4px;
+  width: 4px; height: 4px;
+  background: #00ff00;
+  border-radius: 50%;
+  box-shadow: 8px 0 0 #00ff00, 16px 0 0 #ff0000,
+    0 10px 0 #00ff00, 8px 10px 0 #00ff00, 16px 10px 0 #00ff00,
+    0 20px 0 #ffff00, 8px 20px 0 #00ff00, 16px 20px 0 #00ff00;
+  animation: serverBlink 0.5s ease-in-out infinite;
+}
+
+@keyframes serverBlink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}
+
+/* ============ OTHER EQUIPMENT ============ */
+.tile-printer, .tile-trash {
+  background: #c9a86c;
+  border: 1px solid #a8884c;
+}
+
+.printer-furniture {
+  position: absolute;
+  bottom: 6px; left: 50%;
+  transform: translateX(-50%);
+  width: 34px; height: 22px;
+  background: linear-gradient(180deg, #4a4a4a 0%, #3a3a3a 100%);
+  border: 3px solid #2a2a2a;
+  border-radius: 3px;
+}
+
+.printer-furniture::before {
+  content: '';
+  position: absolute;
+  top: 4px; left: 50%;
+  transform: translateX(-50%);
+  width: 20px; height: 4px;
+  background: #1a1a1a;
+}
+
+.printer-furniture::after {
+  content: '';
+  position: absolute;
+  bottom: 3px; right: 4px;
+  width: 6px; height: 6px;
+  background: #00ff00;
+  border-radius: 50%;
+  animation: printerBlink 2s ease-in-out infinite;
+}
+
+@keyframes printerBlink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+.trash-furniture {
+  position: absolute;
+  bottom: 4px; left: 50%;
+  transform: translateX(-50%);
+  width: 20px; height: 26px;
+  background: linear-gradient(180deg, #606060 0%, #404040 100%);
+  border: 2px solid #303030;
+  border-radius: 0 0 4px 4px;
+}
+
+.trash-furniture::before {
+  content: '';
+  position: absolute;
+  top: -4px; left: -2px;
+  width: 24px; height: 4px;
+  background: #505050;
+  border-radius: 2px;
+}
+
+/* ============ LIGHTING ============ */
+.tile-lamp, .tile-floor-lamp, .tile-clock {
+  background: #c9a86c;
+  border: 1px solid #a8884c;
+}
+
+.lamp-furniture {
+  position: absolute;
+  bottom: 4px; left: 50%;
+  transform: translateX(-50%);
+  width: 10px; height: 32px;
+  background: #2a2a2a;
+  border-radius: 2px;
+}
+
+.lamp-furniture::before {
+  content: '';
+  position: absolute;
+  top: -12px; left: 50%;
+  transform: translateX(-50%);
+  width: 24px; height: 16px;
+  background: linear-gradient(180deg, #ffd700 0%, #ffb700 100%);
+  border: 2px solid #cc9900;
+  border-radius: 12px 12px 4px 4px;
+  box-shadow: 0 0 12px rgba(255, 215, 0, 0.6);
+}
+
+.lamp-furniture::after {
+  content: '';
+  position: absolute;
+  bottom: -2px; left: 50%;
+  transform: translateX(-50%);
+  width: 18px; height: 6px;
+  background: #1a1a1a;
+  border-radius: 2px;
+}
+
+.floor-lamp-furniture {
+  position: absolute;
+  bottom: 2px; left: 50%;
+  transform: translateX(-50%);
+  width: 6px; height: 40px;
+  background: #2a2a2a;
+  border-radius: 2px;
+}
+
+.floor-lamp-furniture::before {
+  content: '';
+  position: absolute;
+  top: -8px; left: 50%;
+  transform: translateX(-50%);
+  width: 20px; height: 12px;
+  background: linear-gradient(180deg, #ffeaa7 0%, #fdcb6e 100%);
+  border: 2px solid #f39c12;
+  border-radius: 10px 10px 4px 4px;
+  box-shadow: 0 0 16px rgba(253, 203, 110, 0.6);
+}
+
+.floor-lamp-furniture::after {
+  content: '';
+  position: absolute;
+  bottom: -2px; left: 50%;
+  transform: translateX(-50%);
+  width: 14px; height: 4px;
+  background: #1a1a1a;
+  border-radius: 2px;
+}
+
+.clock-furniture {
+  position: absolute;
+  top: 6px; left: 50%;
+  transform: translateX(-50%);
+  width: 28px; height: 28px;
+  background: #f5f5f5;
+  border: 4px solid #333;
+  border-radius: 50%;
+}
+
+.clock-furniture::before {
+  content: '';
+  position: absolute;
+  top: 50%; left: 50%;
+  width: 2px; height: 8px;
+  background: #333;
+  transform-origin: bottom center;
+  transform: translate(-50%, -100%) rotate(0deg);
+}
+
+.clock-furniture::after {
+  content: '';
+  position: absolute;
+  top: 50%; left: 50%;
+  width: 2px; height: 6px;
+  background: #e74c3c;
+  transform-origin: bottom center;
+  transform: translate(-50%, -100%) rotate(90deg);
+}
+
+/* ============ LOUNGE ============ */
+.tile-couch, .tile-couch-left, .tile-couch-right, .tile-tv {
+  background: #c9a86c;
+  border: 1px solid #a8884c;
+}
+
+.couch-furniture {
+  position: absolute;
+  bottom: 6px; left: 2px;
+  width: 44px; height: 26px;
+  background: linear-gradient(180deg, #8b4513 0%, #6b3410 100%);
+  border: 3px solid #4a2208;
+  border-radius: 6px;
+}
+
+.couch-furniture::before {
+  content: '';
+  position: absolute;
+  top: -8px; left: 4px;
+  width: 32px; height: 10px;
+  background: #8b4513;
+  border: 2px solid #4a2208;
+  border-radius: 4px 4px 0 0;
+}
+
+.tv-furniture {
+  position: absolute;
+  top: 6px; left: 50%;
+  transform: translateX(-50%);
+  width: 38px; height: 28px;
+  background: #1a1a1a;
+  border: 3px solid #0a0a0a;
+  border-radius: 3px;
+}
+
+.tv-furniture::before {
+  content: '';
+  position: absolute;
+  top: 3px; left: 3px;
+  width: 26px; height: 16px;
+  background: linear-gradient(135deg, #4169E1 0%, #6495ED 50%, #4169E1 100%);
+  animation: tvFlicker 3s ease-in-out infinite;
+}
+
+.tv-furniture::after {
+  content: '';
+  position: absolute;
+  bottom: -8px; left: 50%;
+  transform: translateX(-50%);
+  width: 12px; height: 6px;
+  background: #1a1a1a;
+}
+
+@keyframes tvFlicker {
+  0%, 100% { opacity: 0.9; }
+  50% { opacity: 1; }
+  75% { opacity: 0.85; }
+}
+
+/* ============ SIGNS ============ */
+.tile-sign-ceo, .tile-sign-cto, .tile-sign-pm, .tile-sign-dev,
+.tile-sign-qa, .tile-sign-design, .tile-sign-meeting, .tile-sign-lounge {
+  background: #c9a86c;
+  border: 1px solid #a8884c;
+}
+
+.sign-furniture {
+  position: absolute;
+  top: 4px; left: 50%;
+  transform: translateX(-50%);
+  padding: 4px 6px;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 6px;
+  color: white;
+  border-radius: 3px;
+  text-shadow: 1px 1px 0 rgba(0,0,0,0.5);
+  white-space: nowrap;
+}
+
+.sign-ceo-furniture { background: linear-gradient(180deg, #FFD700 0%, #DAA520 100%); border: 2px solid #B8860B; }
+.sign-cto-furniture { background: linear-gradient(180deg, #4169E1 0%, #2a4a9a 100%); border: 2px solid #1a3a7a; }
+.sign-pm-furniture { background: linear-gradient(180deg, #32CD32 0%, #228B22 100%); border: 2px solid #1a6b1a; }
+.sign-dev-furniture { background: linear-gradient(180deg, #9370DB 0%, #6a4aab 100%); border: 2px solid #4a2a8b; }
+.sign-qa-furniture { background: linear-gradient(180deg, #FF6347 0%, #cc4a37 100%); border: 2px solid #aa3a27; }
+.sign-design-furniture { background: linear-gradient(180deg, #FF69B4 0%, #cc4a8a 100%); border: 2px solid #aa3a7a; font-size: 5px; }
+.sign-meeting-furniture { background: linear-gradient(180deg, #20B2AA 0%, #1a8a84 100%); border: 2px solid #0a6a64; font-size: 5px; }
+.sign-lounge-furniture { background: linear-gradient(180deg, #DDA0DD 0%, #ba80ba 100%); border: 2px solid #9a609a; font-size: 5px; }
+
+/* ============ ROLE-SPECIFIC MONITORS WITH SCREEN CONTENT ============ */
+.tile-monitor-ceo, .tile-monitor-cto, .tile-monitor-pm,
+.tile-monitor-dev, .tile-monitor-qa, .tile-monitor-design {
+  background: #c9a86c;
+  border: 1px solid #a8884c;
+}
+
+.monitor-role-furniture {
+  position: absolute;
+  bottom: 4px; left: 50%;
+  transform: translateX(-50%);
+  width: 36px; height: 30px;
+  background: #2a2a2a;
+  border: 4px solid #1a1a1a;
+  border-radius: 3px;
+}
+
+.monitor-role-furniture::before {
+  content: '';
+  position: absolute;
+  bottom: -10px; left: 50%;
+  transform: translateX(-50%);
+  width: 8px; height: 8px;
+  background: #1a1a1a;
+}
+
+.monitor-role-furniture::after {
+  content: '';
+  position: absolute;
+  bottom: -14px; left: 50%;
+  transform: translateX(-50%);
+  width: 20px; height: 4px;
+  background: #1a1a1a;
+  border-radius: 2px;
+}
+
+.screen-content {
+  position: absolute;
+  top: 2px; left: 2px;
+  width: 24px; height: 18px;
+  border-radius: 1px;
+  overflow: hidden;
+}
+
+/* CEO Screen - Charts/Dashboard */
+.screen-ceo {
+  background: linear-gradient(180deg, #1a2a4a 0%, #0a1a2a 100%);
+}
+
+.screen-ceo::before {
+  content: '';
+  position: absolute;
+  bottom: 2px; left: 2px;
+  width: 4px; height: 6px;
+  background: #4ade80;
+  box-shadow:
+    5px 0 0 #facc15,
+    10px 0 0 #4ade80,
+    15px 0 0 #f87171,
+    0 -4px 0 #4ade80,
+    5px -6px 0 #facc15,
+    10px -3px 0 #4ade80,
+    15px -8px 0 #f87171;
+}
+
+.screen-ceo::after {
+  content: '';
+  position: absolute;
+  top: 2px; right: 2px;
+  width: 8px; height: 4px;
+  background: #22c55e;
+  box-shadow: 0 5px 0 #ef4444;
+}
+
+/* CTO Screen - Terminal/Code */
+.screen-cto {
+  background: #0d1117;
+}
+
+.screen-cto::before {
+  content: '';
+  position: absolute;
+  top: 2px; left: 2px;
+  width: 16px; height: 2px;
+  background: #00ff88;
+  box-shadow:
+    0 4px 0 #58a6ff,
+    0 8px 0 #00ff88,
+    0 12px 0 #ff7b72;
+}
+
+.screen-cto::after {
+  content: '';
+  position: absolute;
+  top: 2px; left: 2px;
+  width: 4px; height: 2px;
+  background: #f0883e;
+  animation: terminalBlink 0.5s infinite;
+}
+
+@keyframes terminalBlink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+/* PM Screen - Kanban/Tasks */
+.screen-pm {
+  background: #f1f5f9;
+}
+
+.screen-pm::before {
+  content: '';
+  position: absolute;
+  top: 2px; left: 2px;
+  width: 6px; height: 14px;
+  background: #e2e8f0;
+  border: 1px solid #cbd5e1;
+  box-shadow: 8px 0 0 #e2e8f0, 16px 0 0 #e2e8f0;
+}
+
+.screen-pm::after {
+  content: '';
+  position: absolute;
+  top: 4px; left: 3px;
+  width: 4px; height: 2px;
+  background: #3b82f6;
+  box-shadow:
+    0 3px 0 #22c55e,
+    0 6px 0 #eab308,
+    8px 0 0 #3b82f6,
+    8px 3px 0 #3b82f6,
+    16px 0 0 #22c55e;
+}
+
+/* Dev Screen - Code Editor */
+.screen-dev {
+  background: #1e1e1e;
+}
+
+.screen-dev::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 4px; height: 100%;
+  background: #252526;
+}
+
+.screen-dev::after {
+  content: '';
+  position: absolute;
+  top: 2px; left: 6px;
+  width: 12px; height: 2px;
+  background: #569cd6;
+  box-shadow:
+    0 3px 0 #ce9178,
+    0 6px 0 #4ec9b0,
+    0 9px 0 #dcdcaa,
+    0 12px 0 #9cdcfe;
+}
+
+/* QA Screen - Test Results */
+.screen-qa {
+  background: #1a1a2e;
+}
+
+.screen-qa::before {
+  content: '';
+  position: absolute;
+  top: 2px; left: 2px;
+  width: 3px; height: 3px;
+  background: #22c55e;
+  border-radius: 50%;
+  box-shadow:
+    5px 0 0 #22c55e,
+    10px 0 0 #22c55e,
+    15px 0 0 #22c55e,
+    0 5px 0 #22c55e,
+    5px 5px 0 #22c55e,
+    10px 5px 0 #ef4444,
+    15px 5px 0 #22c55e,
+    0 10px 0 #22c55e,
+    5px 10px 0 #22c55e,
+    10px 10px 0 #22c55e,
+    15px 10px 0 #eab308;
+}
+
+.screen-qa::after {
+  content: 'PASS';
+  position: absolute;
+  bottom: 1px; right: 1px;
+  font-size: 4px;
+  color: #22c55e;
+  font-family: monospace;
+}
+
+/* Designer Screen - Design Tool */
+.screen-design {
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+}
+
+.screen-design::before {
+  content: '';
+  position: absolute;
+  top: 3px; left: 3px;
+  width: 10px; height: 10px;
+  background: linear-gradient(135deg, #ec4899 0%, #8b5cf6 100%);
+  border-radius: 2px;
+}
+
+.screen-design::after {
+  content: '';
+  position: absolute;
+  top: 3px; right: 3px;
+  width: 6px; height: 6px;
+  background: #06b6d4;
+  border-radius: 50%;
+  box-shadow: 0 8px 0 #f59e0b;
+}

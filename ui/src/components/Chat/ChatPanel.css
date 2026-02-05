@@ -1,0 +1,86 @@
+.chat-panel {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background: var(--color-bg-medium);
+  min-height: 0;
+}
+
+.chat-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 12px;
+  background: var(--color-bg-light);
+  border-bottom: 2px solid var(--color-border);
+}
+
+.chat-title {
+  font-size: 10px;
+  color: var(--color-accent);
+}
+
+.clear-btn {
+  font-size: 6px;
+  padding: 4px 8px;
+  background: var(--color-bg-medium);
+}
+
+.chat-messages {
+  flex: 1;
+  overflow-y: auto;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background: var(--color-bg-dark);
+  min-height: 0;
+}
+
+.no-persona-message {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  color: var(--color-text-dim);
+  text-align: center;
+  gap: 12px;
+}
+
+.no-persona-message span {
+  font-size: 32px;
+  opacity: 0.5;
+}
+
+.no-persona-message p {
+  font-size: 8px;
+  line-height: 1.8;
+}
+
+.chat-input-form {
+  display: flex;
+  gap: 8px;
+  padding: 12px;
+  background: var(--color-bg-light);
+  border-top: 2px solid var(--color-border);
+}
+
+.chat-input-form input {
+  flex: 1;
+  min-width: 0;
+}
+
+.chat-input-form button {
+  min-width: 60px;
+}
+
+.chat-input-form button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.chat-input-form input:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
